@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedBus Clone</title>
+  <link rel="icon" href="img/rdc-redbus-logo.svg" type="image/x-icon"> <!-- Favicon -->
+  <link href="css/style.css" rel="stylesheet" type="text/css"> <!--cssStylesheet-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!--bootstrapcssLink-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!--bootstrapjsLink-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/><!--fontawesome-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <!--bootstrap icon-->
+
+</head>
+<body>
+<!--nav-->
+<header class="container-fluid p-3">
+  <div class="row d-flex align-items-center"> <!--nav div1-->
+    <div class="col-md-3 col-3 "> <!--navbar brand-->
+      <a class="navbar-brand d-flex justify-content-center ps-5" href="#">
+        <img src="img/rdc-redbus-logo.svg" alt="brandLogo" width="120" height="50"><br>
+      </a>
+    </div>
+
+    <div class="col-md-3 col-6"> <!--nav div2-->
+      <ul class="nav nav-pills">  <!--navbar busticket in nav div2-->
+        <li class="nav-item text-center">
+          <a class="nav-link active bg-danger" aria-current="page" href="#">
+            <img src="img/rdc-redbus-logo.svg" class="img-fluid whiteimg" alt="busLogo" width="30" height="22">
+            <br>Bus Tickets
+          </a>
+
+        </li>
+        <li class="nav-item text-center"> <!--navbar Trainticket in navdiv2-->
+          <a class="nav-link text-black" href="#">
+            <img src="img/rail_vertical.svg" class="img-fluid blackimg" alt="railLogo" width="30" height="22">
+            <br>Train Tickets</a>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="col-md-6 col-3 d-flex justify-content-center"> <!--nav div3-->
+      <nav class="navbar navbar-expand-lg ">
+        <!-- containerbox for button-navbar toggler and div-navbarcollapse in nav div3-->
+
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link" href="#"><i class="fa-solid fa-headset p-2"></i>Helpline</a>
+            </li>
+            <li class="nav-item dropdown px-5">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                <i class="fa-regular fa-comments p-1"></i>
+                English
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="hindi.html">हिन्दी (Hindi)</a></li>
+                <li><a class="dropdown-item" href="tamil.html">தமிழ் (Tamil)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                <i class="fa-regular fa-circle-user p-1"></i>
+                Account
+              </a>
+              <ul class="dropdown-menu ">
+                <li><a class="dropdown-item " href="cancel-ticket.html">Cancel Ticket</a></li>
+                <li><a class="dropdown-item" href="change-date.html">Change Travel Date</a></li>
+                <li><a class="dropdown-item" href="show-ticket.html">Show My Ticket</a></li>
+                <li><a class="dropdown-item" href="email-sms.html">Email/SMS</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="login.html">Login/Sign Up</a></li>
+
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--section1-->
+<section>
+  <div class="bg-custom container-fluid p-0 ">
+    <div class="row py-2 ps-3 wrap-input ">
+
+      <div class="col-md-3 col-12 p-0 from-input">
+        <span> <i class="fas fa-bus-alt me-2"></i></span>
+        <label id="fromplace">To</label><br>
+        <input type="text" class="form-control px-5 border-0" name="fromplace">
+      </div>
+
+      <div class="swap-icon col-md-1 text-center">
+        <i class="fas fa-exchange-alt"></i>
+      </div>
+
+      <div class="col-md-3 col-12 p-0 ">
+        <span> <i class="fas fa-bus-alt me-2"></i></span>
+        <label id="toplace">From</label><br>
+        <input type="text" class="form-control border-0" name="toplace">
+      </div>
+
+      <div class="col-md-3 col-12 p-0">
+        <i class="far fa-calendar-alt me-2"></i>
+        <label id="date-in">Date</label><br>
+        <input type="date" name="date-in" class="form-control border-0">
+      </div>
+      <div class="col-md-2 col-12 p-0">
+        <button type="button" class="btn btn-danger">SEARCH BUSES</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!--section2-->
+<section>
+  <div class="container">
+    <div class="card bg-white text-white m-5 "> <!--outer card-->
+      <h3 class="text-black px-5 py-2 pt-5"><b>TRENDING OFFERS</b></h3>
+
+    <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false"> <!--carousal class-->
+      <div class="carousel-inner">
+
+        <div class="carousel-item active"> <!--firstcarousal slide-->
+          <div class="card-group">
+            <div class="row p-5">
+
+              <div class="col-md-4 col-12"> <!--card1-->
+                <div class="card mb-3 bg-primary bg-gradient text-white border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-brands fa-first-order-alt display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 250 on bus tickets</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-4 col-12">  <!--card2-->
+                <div class="card mb-3 bg-success bg-gradient text-white border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-solid fa-sack-dollar display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 300 on bus karnataka,Tamil</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-4 col-12">  <!--card3-->
+                <div class="card mb-3 bg-danger bg-gradient text-white border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-solid fa-gift display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 300 on Karnataka, Tamil Nadu</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+        </div>
+        </div>
+
+        <div class="carousel-item"> <!--secondcarousal slide-->
+          <div class="card-group">
+            <div class="row p-5">
+
+              <div class="col-md-4 col-12"> <!--card1-->
+                <div class="card mb-3 bg-primary bg-gradient text-white border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-brands fa-first-order-alt display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 250 on bus tickets</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-4 col-12">  <!--card2-->
+                <div class="card mb-3 bg-success bg-gradient text-white border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-solid fa-sack-dollar display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 300 on bus karnataka,Tamil</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-4 col-12">  <!--card3-->
+                <div class="card mb-3 bg-danger bg-gradient text-white border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-solid fa-gift display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 300 on Karnataka, Tamil Nadu</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item"> <!--third carousal slide-->
+          <div class="card-group">
+            <div class="row p-5">
+
+              <div class="col-md-4 col-12"> <!--card1-->
+                <div class="card mb-3 bg-primary bg-gradient text-white border-0">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-brands fa-first-order-alt display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 250 on bus tickets</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-4 col-12">  <!--card2-->
+                <div class="card mb-3 bg-success bg-gradient text-white border-0">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-solid fa-sack-dollar display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 300 on bus karnataka,Tamil</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-4 col-12">  <!--card3-->
+                <div class="card mb-3 bg-danger bg-gradient text-white border-0" >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <i class="fa-solid fa-gift display-1 py-5 ps-2 text-danger"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">BUS</h5>
+                        <p class="card-text">Save up to Rs 300 on Karnataka, Tamil Nadu</p>
+                        <p class="card-text"><small class="text-muted">Valid till 31 Mar</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+        </div>
+      </div>
+
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+  </div>
+
+  </div>
+  </div>
+</section>
+
+<!--section3-->
+<section>
+  <div class="container">
+    <h2 class="text-black px-5 py-2 pt-5">GOVERNMENT BUSES</h2>
+    <div class="m-5">
+
+
+      <div id="carouselExampleCaptions2" class="carousel carousel-dark slide" data-bs-ride="false">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card-group">
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="carousel-item">
+            <div class="card-group">
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="carousel-item">
+
+
+            <div class="card-group">
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+  </div>
+
+  </div>
+</section>
+
+<!--section4-->
+<section>
+  <div class="container">
+    <div class="row m-5 ">
+
+      <!-- First Column: 5 Rows -->
+      <div class="col-md-6 col-12">
+        <div class="row  p-3 ">
+          <h3>NOW, <b>GET MORE THAN JUST BUS </b>TICKETS WITH REDBUS!</h3>
+        </div>
+        <div class="row p-3 ">
+          <p><img src="img/rail_vertical.svg" class="img-fluid" alt="railLogo" width="40" height="42">Train Tickets</p>
+          <div class="hrwidth "><hr></div>
+        </div>
+        <div class="row  p-3 ">
+          Book IRCTC Train Tickets on redRail simple & superfast booking process with no service fee + no payment gateway charge.
+        </div>
+        <div class="row  p-3 ">
+          <ul>
+            <li><b>Authorised IRCTC Partner</b></li>
+            <li><b>Instant refunds on UPI payments</b></li>
+            <li><b>Hassle- free customer support</b></li>
+          </ul>
+        </div>
+        <div class="row p-3 ">
+          <button type="button" class="btn btn-danger buttonwidth">Book Train Tickets</button>
+        </div>
+      </div>
+
+      <!-- Second Column: Image (Only visible on medium and larger screens) -->
+      <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center">
+        <img src="img/railPop.webp" class="img-fluid" alt="Image">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!--section5-->
+<section>
+  <div class="container">
+    <div class="row m-5">
+      <img src="img/cardimg1.png" class="img-fluid" alt="card1">
+    </div>
+  </div>
+</section>
+
+
+<!--section6-->
+<section>
+  <div class="container">
+    <div class="row m-5">
+      <img src="img/cardimg2.png" class="img-fluid" alt="card2">
+    </div>
+  </div>
+</section>
+
+<!--section7-->
+<section>
+  <div class="container">
+    <h2 class="text-black px-5 py-2 pt-5">Global Presence</h2>
+    <div >
+            <table class="align" >
+              <thead>
+              <tr>
+                <th class="border-0" scope="col">  <img src="img/columbia.jpeg" class="rounded mx-auto d-block"  width="120" height="120" alt="..."></th>
+                <th class="border-0" scope="col"><img src="img/india.jpeg" class="rounded mx-auto d-block" width="150" height="120" alt="..."></th>
+                <th class="border-0" scope="col"><img src="img/Indonesia.png" class="rounded mx-auto d-block"  width="120" height="120" alt="..."></th>
+                <th class="border-0" scope="col"><img src="img/malaysia.png" class="rounded mx-auto d-block"  width="120" height="120" alt="..."></th>
+                <th class="border-0" scope="col"><img src="img/peru.png" class="rounded mx-auto d-block"  width="120" height="120" alt="..."></th>
+                <th class="border-0" scope="col"><img src="img/singapore.png" class="rounded mx-auto d-block"  width="120" height="120" alt="..."></th>
+                <th class="border-0" scope="col"><img src="img/vietnam.jpeg" class="rounded mx-auto d-block"  width="120" height="120" alt="..."></th>
+                <th class="border-0" scope="col"><img src="img/cambodia.png" class="rounded mx-auto d-block"  width="120" height="120" alt="..."></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr >
+                <td class=" text-center border-0">Columbia</td>
+                <td class=" text-center border-0">India</td>
+                <td class="text-center border-0">Indonesia</td>
+                <td class="text-center border-0">Malaysia</td>
+                <td class="text-center border-0">Peru</td>
+                <td class="text-center border-0">Singapore</td>
+                <td class="text-center border-0">Vietnam</td>
+                <td class="text-center border-0">Cambodia</td>
+              </tr>
+            </table>
+    </div>
+  </div>
+</section>
+
+<!--section8-->
+<section>
+  <div class="container mt-4">
+    <h2 class="mb-3">BOOK BUS TICKETS ONLINE</h2>
+    <p>
+      RedBus is India's largest brand for online bus ticket booking and offers an easy-to-use online bus and <a href="#">train ticket</a> booking; with over 36 million satisfied customers, 3500+ bus operators to choose from, and plenty of offers on bus ticket booking, redBus makes road journeys super convenient for travellers. A leading platform for booking bus tickets, redBus has been the leader in online bus booking over the past 17 years across thousands of cities and lakhs of routes in India.
+      Booking a bus ticket online on the redBus app or website is very simple. You can download the redBus app or visit redbus.in and enter your source, destination & travel date to check the top-rated bus services available. You can then compare the cheapest ticket price, user ratings & amenities, select your preferred seat, boarding & dropping points and pay using multiple payment options like UPI, debit or credit card, net banking and more. With redBus, get assured safe & secure payment methods and guaranteed travel
+      <span class="hidden-content"> with the best seat and bus operator of your choice at an affordable bus ticket price. Once the bus booking payment is confirmed, all you have to do is pack your bags and get ready to travel with the m-ticket, which you can show to the bus operator on your mobile before boarding the bus. Online bus ticket booking with redBus is that simple!
+        redBus also offers other exclusive benefits on online bus tickets like flexible ticket rescheduling options, easy & friendly cancellation policies, and instant payment refunds. With a live bus tracking feature, you can plan travel and never miss the bus. You can get the cheapest bus tickets by availing the best discounts for new & existing customers. With redDeals, you can also get exclusive & additional discounts on your online bus ticket booking. You will get 24/7 customer support on call, chat & help to resolve all your queries in English & local languages.
+        redBus offers Primo bus services, specially curated by redBus, which have highly rated buses at the lowest bus ticket price and best-in-class service. With Primo by redBus, you can be assured of safe, comfortable, and on-time bus service at no additional cost. With multiple boarding and dropping points available across all major cities in India, you can select at your convenience and enjoy a smooth travel experience.
+        redBus operates in six countries, including India, Malaysia, Singapore, Indonesia, Peru, and Colombia. Through its website and app, it has sold over 220 million bus tickets worldwide. With over 36 million satisfied customers, redBus is committed to providing its users with a world-class online bus booking experience.
+        redBus offers bus tickets from some of the top private bus operators, such as Orange Travels, VRL Travels, SRS Travels, Chartered Bus, A1 Travels and Praveen Travels, and state government bus operators, such as APSRTC, TSRTC, GSRTC, Kerala RTC, TNSTC, RSRTC, UPSRTC, and more. With redBus, customers can easily book bus tickets for different bus types, such as AC/non-AC, Sleeper, Seater, Volvo, Multi-axle, AC Sleeper, Electric buses, and more.</span>
+    </p>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Bus Booking redDeals on redBus</h2>
+    <p>Don't miss out on these incredible offers, book your bus tickets now and travel with convenience and affordability. Hurry, grab the best bus booking deals before they're gone!</p>
+
+    <div class="card">
+
+      <div class="card-body">
+        <h5 class="card-title">Unlock Unbeatable Exclusive redDeals! <span class="display-1">20% OFF</span></h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+</body>
+</html>
+
+

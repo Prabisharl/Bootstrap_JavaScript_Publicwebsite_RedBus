@@ -1,0 +1,118 @@
+.whiteimg {
+  filter: brightness(0) invert(1);
+  /*First, brightness(0) makes all image black, except transparent parts, which remain transparent.*/
+  /*Then, invert(1) makes the black parts white.*/
+}
+.blackimg{
+  filter: brightness(0);
+}
+.redimg{
+
+    filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(0deg);
+
+}
+.hrwidth{
+  width: 50% !important;
+  height: 10px;
+}
+.buttonwidth{
+  width:45% !important;
+  height: 50px;
+
+}
+.bg-custom {
+  background-image: url('https://s3.rdbuz.com/images/webplatform/india/Homepage-header-2000.webp');
+  width: 100%;  /* Full width of the div */
+  height: 450px;  /* Fixed height */
+  background-size: cover;  /* Ensures full coverage */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 20px;
+}
+td:hover {
+  background-color: gray !important; /* Change background to gray on hover */
+  color: white; /* Optional: Change text color */
+  transition: 0.3s ease-in-out; /* Smooth transition */
+}
+.align {
+  width: 100%
+}
+
+
+@media (max-width: 767px) {
+  /* Applies for small screens */
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead tr { /* Hide table headers */
+    display: none;
+  }
+
+  tbody td {
+    border: 1px solid #dee2e6; /* Adds border like table rows */
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+    /*.wrap-input form-group {*/
+    /*  display: flex;*/
+    /*  flex-wrap: wrap;*/
+    /*  max-width: 600px;*/
+    /*  width: 100%;*/
+    /*}*/
+
+    /*.wrap-input row {*/
+    /*  display: flex;*/
+    /*  flex-wrap: wrap;*/
+    /*  width: 100%;*/
+    /*}*/
+
+    /*.wrap-input col {*/
+    /*  flex: 1 1 25%; !* 4 inputs per row *!*/
+    /*}*/
+
+    /*.wrap-input input {*/
+    /*  width: 100%;*/
+    /*  padding: 10px;*/
+    /*  box-sizing: border-box; !* Prevents extra width issues *!*/
+    /*  border: 1px solid #ccc;*/
+    /*}*/
+
+    /* Small Screens: 1 input per row */
+
+@media (max-width: 480px) {
+  .wrap-input col {
+    flex: 1 1 100%; /* Full width per row */
+  }
+}
+.wrap-input{
+  background-color: white;
+  height: 100px;
+  width: 70%;
+  align-items: center;
+  border-radius: 25px;
+
+}
+.input-middle{
+height: 30px;
+
+
+}
+.input-left{
+  height: 30px;
+
+
+}
+.input-right{
+  height: 30px;
+
+}
+.hidden-content {
+  display: none;
+}
